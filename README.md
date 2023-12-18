@@ -1,0 +1,1 @@
+# LogicaProgramacion-Ejercicio-1-Tipti-Suplentes-
