@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Promedio de Notas</title>
+</head>
+<body>
+    <script>
+    function validarNota(nota) {
+        return nota >= 0 && nota <= 10;
+       }
+       
+       function calcularPromedio(nota1, nota2, nota3) {
+        return (nota1 + nota2 + nota3) / 3;
+       }
+       
+       function evaluarPromedio(promedio) {
+        if (promedio >= 7) {
+           return '¡felicidades! Has aprobado con un promedio de ' + promedio + '.';
+        } else {
+           return 'gracias por tu esfuerzo. Nos vemos pronto en clase. El promedio obtenido es ' + promedio + '.';
+        }
+       }
+       
+       // Solicita al usuario que ingrese el nombre del alumno, la materia y las tres notas
+       var nombreAlumno = prompt('Ingrese el nombre del alumno:');
+       var materia = prompt('Ingrese la materia:');
+       var nota1 = parseFloat(prompt('Ingrese la primera nota (0-10):'));
+       var nota2 = parseFloat(prompt('Ingrese la segunda nota (0-10):'));
+       var nota3 = parseFloat(prompt('Ingrese la tercera nota (0-10):'));
+       
+       // Verifica si las notas ingresadas se encuentran dentro del rango valido
+       if (!validarNota(nota1) || !validarNota(nota2) || !validarNota(nota3)) {
+        alert('Error: una o más de las notas ingresadas no se encuentran dentro del rango válido (0-10).');
+       } else {
+        // Calcular el promedio de las tres notas
+        var promedio = calcularPromedio(nota1, nota2, nota3);
+       
+        // Evalua si el promedio es mayor o igual a 7
+        var resultado = evaluarPromedio(promedio);
+       
+        // Imprime el resultado
+        alert('Nombre del alumno: ' + nombreAlumno + ', Materia: ' + materia + '. ' + resultado);
+       }
+    </script>  
+</body>
+</html>
